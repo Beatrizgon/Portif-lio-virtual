@@ -1,38 +1,38 @@
-$(document).ready(function(){
-    $(window).scroll(function(){
-        if(this.scrollY > 20){
+$(document).ready(function () {
+    $(window).scroll(function () {
+        if (this.scrollY > 20) {
             $('.navbar').addClass('sticky');
-        }else{
-            $('.navbar').Class('sticky'); 
+        } else {
+            $('.navbar').removeClass('sticky');
         }
     });
+
+    $('.menu-btn').click(function () {
+        $('.navbar .menu').toggleClass("active");
+        $('.menu-btn i').toggleClass("active");
+    });
+
+    // Função para o projeto 1
+    const projectCard1 = document.getElementById('projectCard1');
+    const overlay1 = document.getElementById('overlay1');
+
+    projectCard1.addEventListener('mouseenter', () => {
+        overlay1.style.display = 'flex';
+    });
+
+    projectCard1.addEventListener('mouseleave', () => {
+        overlay1.style.display = 'none';
+    });
+
+    // Função para o projeto 2
+    const projectCard2 = document.getElementById('projectCard2');
+    const overlay2 = document.getElementById('overlay2');
+
+    projectCard2.addEventListener('mouseenter', () => {
+        overlay2.style.display = 'flex';
+    });
+
+    projectCard2.addEventListener('mouseleave', () => {
+        overlay2.style.display = 'none';
+    });
 });
-
-$('.menu-btn').click(function(){
-    $('.navbar .menu').toggleClass("active");
-    $('.menu-btn i').toggleClass("active");
-});
-
-const projectCard = document.getElementById('projectCard');
-        const infoCard = document.getElementById('infoCard');
-        const closeBtn = document.getElementById('closeBtn');
-        const overlay = document.querySelector('.overlay');
-
-        // Mostrar overlay ao passar o mouse sobre o card
-        projectCard.addEventListener('mouseenter', () => {
-            overlay.style.display = 'flex';
-        });
-
-        projectCard.addEventListener('mouseleave', () => {
-            overlay.style.display = 'none';
-        });
-
-        // Mostrar as informações do projeto ao clicar no card
-        projectCard.addEventListener('click', () => {
-            infoCard.style.display = 'block';
-        });
-
-        // Fechar o card de informações
-        closeBtn.addEventListener('click', () => {
-            infoCard.style.display = 'none';
-        });
