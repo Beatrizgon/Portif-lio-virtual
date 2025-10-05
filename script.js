@@ -36,3 +36,44 @@ $(document).ready(function () {
         overlay2.style.display = 'none';
     });
 });
+
+const frases = [
+  "Desenvolvedora Front-End",
+  "Estudante de ADS",
+  "Apaixonada por tecnologia e inovação",
+];
+
+const textoElemento = document.getElementById("animated-text");
+let fraseIndex = 0;
+let letraIndex = 0;
+let deletando = false;
+let velocidade = 100; // tempo entre cada letra
+
+function digitar() {
+  const fraseAtual = frases[fraseIndex];
+  
+  if (!deletando) {
+    textoElemento.textContent = fraseAtual.slice(0, letraIndex + 1);
+    letraIndex++;
+
+    if (letraIndex === fraseAtual.length) {
+      deletando = true;
+      setTimeout(digitar, 1500); // espera 1,5s antes de deletar
+      return;
+    }
+  } else {
+    textoElemento.textContent = fraseAtual.slice(0, letraIndex - 1);
+    letraIndex--;
+
+    if (letraIndex === 0) {
+      deletando = false;
+      fraseIndex = (fraseIndex + 1) % frases.length;
+    }
+  }
+  setTimeout(digitar, velocidade);
+}
+
+digitar();
+
+
+
