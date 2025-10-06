@@ -43,7 +43,6 @@ Entre em contato comigo via:
 ---
 
 ## ⭐ Observações
-
-- Site totalmente **responsivo** 📱  
+ 
 - Layout moderno, com **fundo escuro** e roxo como destaque 💜  
 - Links para **projetos reais** que você pode explorar  
