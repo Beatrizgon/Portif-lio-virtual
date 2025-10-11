@@ -1,9 +1,7 @@
 # 🌟 Meu Portfólio Virtual
 
 Bem-vindo ao meu **Portfólio Virtual**! 🚀  
-Aqui você pode conhecer meus **projetos**, minhas **habilidades** e entrar em **contato** comigo de forma interativa! ✨
-
-![Banner Portfólio](https://media.giphy.com/media/3o7TKr6fTIbR1e9u0c/giphy.gif)  
+Aqui você pode conhecer meus **projetos**, minhas **habilidades** e entrar em **contato** comigo de forma prática. ✨
 
 ---
 
@@ -21,28 +19,17 @@ Aqui você pode conhecer meus **projetos**, minhas **habilidades** e entrar em *
 
 ## 🖼 Seções do Portfólio
 
-| Seção       | Descrição                                                                 | GIF de exemplo |
-|------------|---------------------------------------------------------------------------|----------------|
-| **Home**    | Apresentação inicial com efeito animado de texto 🎨                        | ![Home](https://media.giphy.com/media/3o7TKr6fTIbR1e9u0c/giphy.gif) |
-| **Sobre**   | Informações sobre minha formação e experiência 📚                           | ![Sobre](https://media.giphy.com/media/26xBwdIuRJiAi5iGA/giphy.gif) |
-| **Skills**  | Minhas habilidades técnicas 💡                                             | ![Skills](https://media.giphy.com/media/xT0xeJpnrWC4XWblEk/giphy.gif) |
-| **Projetos**| Galeria de projetos com links diretos 🖥️                                   | ![Projetos](https://media.giphy.com/media/3o6Mbbs879ozZ9Yic0/giphy.gif) |
-| **Contato** | Formas de entrar em contato comigo 📧                                       | ![Contato](https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif) |
+- **Home**: Apresentação inicial com destaque em texto 🎨  
+- **Sobre**: Informações sobre minha formação e experiência 📚  
+- **Skills**: Minhas habilidades técnicas 💡  
+- **Projetos**: Galeria de projetos com links diretos 🖥️  
+- **Contato**: Formas de entrar em contato comigo 📧  
 
 ---
 
 ## 🔗 Acesse meu portfólio online
 
 🌐 [Clique aqui para visitar meu Portfólio Virtual](https://meu-portfolio-virtual.netlify.app/)  
-
----
-
-## 📌 Observações
-
-- Site totalmente **responsivo** 📱  
-- Animações e hover effects para melhor experiência ✨  
-- Layout moderno, com **fundo escuro** e roxo como destaque 💜  
-- Links para **projetos reais** que você pode explorar  
 
 ---
 
@@ -55,9 +42,7 @@ Entre em contato comigo via:
 
 ---
 
-## ⭐ Contribuições
-
-Este repositório é público e você pode explorar ou se inspirar no layout, design e estrutura de portfólio moderno.  
-
----
-
+## ⭐ Observações
+ 
+- Layout moderno, com **fundo escuro** e roxo como destaque 💜  
+- Links para **projetos reais** que você pode explorar  
