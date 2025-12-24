@@ -31,9 +31,9 @@ $(document).ready(function () {
         function () { $('#overlay2').css('display', 'none'); }
     );
     const frases = [
-        "Desenvolvedora Front-End",
+        "Desenvolvimento Front-End",
         "Estudante de ADS",
-        "Apaixonada por tecnologia e inovação",
+        "Tecnologia e inovação",
     ];
 
     const textoElemento = $("#animated-text");
