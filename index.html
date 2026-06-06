@@ -5,66 +5,78 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio Virtual</title>
+    <meta name="description" content="Beatriz Gonçalves - Desenvolvedora Front-End especializada em React, TypeScript e soluções com IA. Portfólio profissional.">
+    <title>Beatriz Gonçalves | Desenvolvedora Front-End & IA</title>
     <link rel="icon" href="image/logo (2).png" type="image/png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 </head>
 
 <body>
     <div class="navbar">
         <div class="max-width">
-            <div class="logo-wrapper" style="display: flex; align-items: center;">
-                <img src="image/logo (2).png" style="width: auto; height: 35px; margin-right: 15px;">
-                <div class="logo" style="margin-right: 150px;"><a href="#">Portfólio Virtual</a></div>
+            <div class="logo-wrapper">
+                <img src="image/logo (2).png" class="navbar-logo">
+                <div class="logo"><a href="#">Portfólio</a></div>
                 <div class="menu-btn">
                     <i class="fas fa-bars"></i>
                 </div>
                 <div class="menu-overlay"></div>
             </div>
             <ul class="menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Idioms</a></li>
-                <li><a href="#services">Skills</a></li>
-                <li><a href="#skills">Projects</a></li>
-                <li><a href="#contact">Contact Me</a></li>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#services">Habilidades</a></li>
+                <li><a href="#skills">Projetos</a></li>
+                <li><a href="#contact">Contato</a></li>
             </ul>
         </div>
     </div>
     <section class="home" id="home">
         <div class="max-width">
-            <div class="home-content">
-                <div class="text-1">Seja bem-vindo(a)! Meu nome é</div>
+            <div class="home-content" data-aos="fade-right" data-aos-duration="1000">
+                <div class="badge-container">
+                    <span class="status-badge"><i class="fas fa-circle pulse"></i> Disponível para oportunidades</span>
+                </div>
+                <div class="text-1">Olá! Eu sou</div>
                 <div class="text-2">Beatriz Gonçalves</div>
-                <div class="text-3"><span id="animated-text"></span></div> <a href="#about">Saiba Mais</a><a
-                    href="document/Currículo - Beatriz Gonçalves (3).pdf">Visualizar CV</a>
+                <div class="text-3"><span id="animated-text"></span></div>
+                <p class="home-description">Transformando ideias em experiências digitais através de código limpo, design intuitivo e soluções inovadoras com <strong>Inteligência Artificial</strong>.</p>
+                <div class="cta-buttons">
+                    <a href="#skills" class="btn-primary"><i class="fas fa-folder-open"></i> Ver Projetos</a>
+                    <a href="document/Currículo - Beatriz dos Prazeres.docx" class="btn-secondary"><i class="fas fa-download"></i> Baixar CV</a>
+                    <a href="https://www.linkedin.com/in/beatriz-dos-prazeres-gon%C3%A7alves-fazenda-da-silva/" target="_blank" class="btn-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Beatrizgon" target="_blank" class="btn-icon"><i class="fab fa-github"></i></a>
+                </div>
             </div>
-        </div>
-        <div class="profile"><a href="https://github.com/Beatrizgon"><img
-                    src="image/Me.jpg" alt=""></a>
+            <div class="profile" data-aos="fade-left" data-aos-duration="1000">
+                <div class="profile-wrapper">
+                    <div class="profile-glow"></div>
+                    <a href="https://github.com/Beatrizgon"><img src="image/Me.jpg" alt="Beatriz Gonçalves - Desenvolvedora Front-End"></a>
+                </div>
+            </div>
         </div>
     </section>
     <section class="about" id="about">
         <div class="max-width">
             <div class="about-content">
-                <div class="column left">
-                    <h2 class="section-title education-title">
-                        <img src="image/person.png" class="icon-inline">
-                        Minha Experiência
-                    </h2>
+                <div class="column left" data-aos="fade-right" data-aos-duration="800">
+                    <div class="section-header-about">
+                        <span class="section-tag"><i class="fas fa-briefcase"></i> Experiência</span>
+                    </div>
                     <div class="experience-boxes">
                         <div class="exp-box">
-                            <h3>Estágio em Suporte de TI</h3>
+                            <h3>Estágio Suporte de TI - MEDX Tecnologia S.A.</h3>
                             <p class="dates">01/2025 - presente</p>
                             <ul class="exp-list">
-                                <li>Atendimento técnico via sistema de tickets, solucionando dúvidas e problemas.</li>
-                                <li>Participação no desenvolvimento Front-End: melhorias, correções e testes.</li>
+                                <li>Atendimento de Suporte Técnico via sistema de tickets, solucionando dúvidas e problemas.</li>
+                                <li>Desenvolvimento Front-End: implementações, correções e testes.</li>
+                                <li>Desenvolvimento de landing pages</li>
+                                <li>Desenvolvimento de assistentes virtuais com IA (Chatbots) para atuação no Whatsapp.</li>
                                 <li>Uso de controle de versionamento com branches no GitHub.</li>
-                                <li>Manutenção da landing page, incluindo atualizações e ajustes via FileZilla.</li>
-                                <li>Desenvolvimento de assistentes virtuais com IA (Chatbots) para suporte a clínicas.
-                                </li>
                             </ul>
                         </div>
                         <div class="exp-box">
@@ -91,11 +103,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="column right">
-                    <h2 class="section-title education-title">
-                        <img src="image/school.png" class="icon-inline">
-                        Minha Educação
-                    </h2>
+                <div class="column right" data-aos="fade-left" data-aos-duration="800">
+                    <div class="section-header-about">
+                        <span class="section-tag"><i class="fas fa-graduation-cap"></i> Educação</span>
+                    </div>
                     <div class="education-boxes">
                         <div class="edu-box">
                             <h3>Análise e Desenvolvimento de Sistemas
@@ -137,9 +148,11 @@
     
     <section class="services" id="services">
         <div class="max-width">
-            <h2 class="title">Habilidades</h2>
-            <p class="subtitle">Tecnologias e ferramentas</p>
-            <div class="serv-content">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag"><i class="fas fa-tools"></i> Habilidades</span>
+                <p class="subtitle">Tecnologias e ferramentas que utilizo no dia a dia</p>
+            </div>
+            <div class="serv-content" data-aos="fade-up" data-aos-delay="100">
                 <div class="card">
                     <div class="box">
                         <i class="fab fa-html5"></i>
@@ -166,8 +179,20 @@
                 </div>
                 <div class="card">
                     <div class="box">
-                        <i class="fab fa-node-js"></i>
-                        <p>Node.js</p>
+                        <i class="fas fa-desktop"></i>
+                        <p>UX/UI</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <i class="fas fa-paint-brush"></i>
+                        <p>Figma</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <i class="fab fa-react"></i>
+                        <p>React</p>
                     </div>
                 </div>
                 <div class="card">
@@ -178,8 +203,14 @@
                 </div>
                 <div class="card">
                     <div class="box">
-                        <i class="fab fa-react"></i>
-                        <p>React</p>
+                        <i class="fab fa-bootstrap"></i>
+                        <p>Bootstrap</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <i class="fab fa-node-js"></i>
+                        <p>Node.js</p>
                     </div>
                 </div>
                 <div class="card">
@@ -200,7 +231,6 @@
                         <p>MySQL</p>
                     </div>
                 </div>
-                
                 <div class="card">
                     <div class="box">
                         <i class="fab fa-git-alt"></i>
@@ -213,79 +243,161 @@
                         <p>GitHub</p>
                     </div>
                 </div>
-                
-                <div class="card">
-                    <div class="box">
-                        <i class="fas fa-paint-brush"></i>
-                        <p>Figma</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="box">
-                        <i class="fab fa-bootstrap"></i>
-                        <p>Bootstrap</p>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="box">
-                        <i class="fas fa-desktop"></i>
-                        <p>UX/UI</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="box">
-                        <i class="fas fa-brush"></i>
-                        <p>Canva</p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
     <section class="skills" id="skills">
         <div class="max-width">
-            <h2 class="title">Projetos</h2>
-            <p class="subtitle">Visite meus repositórios no <a href="https://github.com/SEU_USUARIO"
-                    target="_blank">GitHub</a></p>
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag"><i class="fas fa-code"></i> Projetos em Destaque</span>
+                <p class="subtitle">Soluções reais desenvolvidas com foco em <strong>performance</strong>, <strong>usabilidade</strong> e <strong>inovação</strong></p>
+            </div>
+            
+            <div class="projects-filter" data-aos="fade-up" data-aos-delay="100">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="frontend">Front-End</button>
+                <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+                <button class="filter-btn" data-filter="ia">IA</button>
+            </div>
+
             <div class="projects-grid">
-                <a href="https://github.com/Beatrizgon/sweetLife" target="_blank" class="card">
-                    <img src="image/Sweet Life.png" alt="Sweet Life">
-                    <div class="card-content">
-                        <p>Sweet Life</p>
+                <!-- Projeto Destaque: Meta Assistant -->
+                <div class="project-card featured" data-category="ia" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-badge">
+                        <i class="fas fa-star"></i> Destaque
                     </div>
-                </a>
-                <a href="https://github.com/Beatrizgon/SeguroVidaAtualizado" target="_blank" class="card">
-                    <img src="image/CareUp.png" alt="CareUp">
-                    <div class="card-content">
-                        <p>CareUp</p>
+                    <div class="project-image">
+                        <img src="image/ai.png" alt="Meta Assistant - Chatbot com IA">
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <a href="https://github.com/Beatrizgon/meta-assistant" target="_blank" class="overlay-btn"><i class="fab fa-github"></i> Código</a>
+                            </div>
+                        </div>
                     </div>
-                </a>
-                <a href="https://github.com/Beatrizgon/mindcode" target="_blank" class="card">
-                    <img src="image/mindcode.png" alt="Projeto 3">
-                    <div class="card-content">
-                        <p>MindCode</p>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="tag tag-ia"><i class="fas fa-robot"></i> Gemini IA</span>
+                        </div>
+                        <h3>Meta Assistant</h3>
+                        <p>Assistente virtual inteligente integrado ao WhatsApp, utilizando IA generativa para atendimento automatizado e personalizado.</p>
+                        <div class="project-stats">
+                            <span><i class="fas fa-brain"></i> Chatbot IA</span>
+                        </div>
                     </div>
-                </a>
-                <a href="https://github.com/Beatrizgon/DashboardSmartOffice" target="_blank" class="card">
-                    <img src="image/smart.png" alt="Smart Office Dashboard">
-                    <div class="card-content">
-                        <p>Smart Office Dashboard</p>
+                </div>
+
+                <!-- Projeto: Smart Office Dashboard -->
+                <div class="project-card" data-category="fullstack" data-aos="fade-up" data-aos-delay="150">
+                    <div class="project-image">
+                        <img src="image/smart.png" alt="Smart Office Dashboard">
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <a href="https://github.com/Beatrizgon/DashboardSmartOffice" target="_blank" class="overlay-btn"><i class="fab fa-github"></i> Código</a>
+                            </div>
+                        </div>
                     </div>
-                </a>
-                <a href="https://github.com/Beatrizgon/meta-assistant?tab=readme-ov-file" target="_blank" class="card">
-                    <img src="image/ai.png" alt="Projeto 5">
-                    <div class="card-content">
-                        <p>Meta Assistant</p>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="tag">Dashboard</span>
+                            <span class="tag">IoT</span>
+                        </div>
+                        <h3>Smart Office Dashboard</h3>
+                        <p>Dashboard interativo para gestão de escritórios inteligentes com monitoramento em tempo real e análise de dados.</p>
+                        <div class="project-stats">
+                            <span><i class="fas fa-chart-line"></i> Analytics</span>
+                            <span><i class="fas fa-cogs"></i> IoT</span>
+                        </div>
                     </div>
+                </div>
+
+                <!-- Projeto: MindCode -->
+                <div class="project-card" data-category="frontend" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-image">
+                        <img src="image/mindcode.png" alt="MindCode">
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <a href="https://github.com/Beatrizgon/mindcode" target="_blank" class="overlay-btn"><i class="fab fa-github"></i> Código</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="tag">HTML/CSS</span>
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">UX/UI</span>
+                        </div>
+                        <h3>MindCode</h3>
+                        <p>Plataforma educacional com foco em desenvolvimento pessoal e aprendizado de programação com design intuitivo.</p>
+                        <div class="project-stats">
+                            <span><i class="fas fa-palette"></i> Design</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto: CareUp -->
+                <div class="project-card" data-category="fullstack" data-aos="fade-up" data-aos-delay="250">
+                    <div class="project-image">
+                        <img src="image/CareUp.png" alt="CareUp - Seguro de Vida">
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <a href="https://github.com/Beatrizgon/SeguroVidaAtualizado" target="_blank" class="overlay-btn"><i class="fab fa-github"></i> Código</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="tag">MySQL</span>
+                        </div>
+                        <h3>CareUp</h3>
+                        <p>Sistema completo de gestão de seguros de vida com cadastro, cotações e gerenciamento de apólices.</p>
+                        <div class="project-stats">
+                            <span><i class="fas fa-shield-alt"></i> FinTech</span>
+                            <span><i class="fas fa-database"></i> Full Stack</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projeto: Sweet Life -->
+                <div class="project-card" data-category="frontend" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-image">
+                        <img src="image/Sweet Life.png" alt="Sweet Life">
+                        <div class="project-overlay">
+                            <div class="overlay-content">
+                                <a href="https://github.com/Beatrizgon/sweetLife" target="_blank" class="overlay-btn"><i class="fab fa-github"></i> Código</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="tag">HTML/CSS</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Responsivo</span>
+                        </div>
+                        <h3>Sweet Life</h3>
+                        <p>Landing page moderna para confeitaria artesanal com design elegante e experiência de usuário otimizada.</p>
+                        <div class="project-stats">
+                            <span><i class="fas fa-mobile-alt"></i> Responsivo</span>
+                            <span><i class="fas fa-paint-brush"></i> Landing Page</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="projects-cta" data-aos="fade-up" data-aos-delay="400">
+                <p>Quer ver mais projetos?</p>
+                <a href="https://github.com/Beatrizgon?tab=repositories" target="_blank" class="btn-github">
+                    <i class="fab fa-github"></i> Ver todos no GitHub
                 </a>
             </div>
         </div>
     </section>
     <section class="contact" id="contact">
         <div class="max-width">
-            <h2 class="title">Contato</h2>
-            <p class="subtitle">Visite meus canais ou envie uma mensagem.</p>
-            <div class="contact-content">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag"><i class="fas fa-paper-plane"></i> Vamos conversar</span>
+                <p class="subtitle">Estou aberta a novas oportunidades e parcerias. Entre em contato!</p>
+            </div>
+            <div class="contact-content" data-aos="fade-up" data-aos-delay="100">
                 <div class="contact-card">
                     <ion-icon name="logo-linkedin"></ion-icon>
                     <div class="info">
@@ -304,7 +416,7 @@
                     </div>
                 </div>
                 <div class="contact-card">
-                    <ion-icon name="globe"></ion-icon>
+                    <ion-icon name="logo-whatsapp"></ion-icon>
                     <div class="info">
                         <h3>WhatsApp</h3>
                         <p><a href="https://wa.link/hh2axl"target="_blank">
@@ -316,10 +428,24 @@
         </div>
     </section>
     <footer>
-        <span>Portfólio Virtual - 2026</span>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="image/logo (2).png" alt="Logo" class="footer-logo">
+                <span>Beatriz Gonçalves</span>
+            </div>
+            <p class="footer-text">Desenvolvido com <i class="fas fa-heart"></i> e muito <i class="fas fa-coffee"></i></p>
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/in/beatriz-dos-prazeres-gon%C3%A7alves-fazenda-da-silva/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Beatrizgon" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:beatrizgoncalves1251@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p class="footer-copyright">© 2026 Beatriz Gonçalves. Todos os direitos reservados.</p>
+        </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
+
 </body>
 
 </html>

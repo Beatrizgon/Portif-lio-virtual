@@ -1,4 +1,12 @@
 $(document).ready(function () {
+    // Inicializar AOS (Animate on Scroll)
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+        offset: 100
+    });
+
     $(window).scroll(function () {
         if (this.scrollY > 20) {
             $('.navbar').addClass('sticky');
@@ -21,26 +29,39 @@ $(document).ready(function () {
         $('.menu-overlay').removeClass("active");
         $('.menu-btn i').removeClass("active");
     });
-    $('#projectCard1').hover(
-        function () { $('#overlay1').css('display', 'flex'); },
-        function () { $('#overlay1').css('display', 'none'); }
-    );
 
-    $('#projectCard2').hover(
-        function () { $('#overlay2').css('display', 'flex'); },
-        function () { $('#overlay2').css('display', 'none'); }
-    );
+    // Filtro de Projetos
+    $('.filter-btn').click(function() {
+        $('.filter-btn').removeClass('active');
+        $(this).addClass('active');
+        
+        const filter = $(this).data('filter');
+        
+        if (filter === 'all') {
+            $('.project-card').fadeIn(300);
+        } else {
+            $('.project-card').each(function() {
+                if ($(this).data('category') === filter) {
+                    $(this).fadeIn(300);
+                } else {
+                    $(this).fadeOut(300);
+                }
+            });
+        }
+    });
+
     const frases = [
-        "Desenvolvimento Front-End",
-        "Estudante de ADS",
-        "Tecnologia e inovação",
+        "Desenvolvedora Front-End",
+        "Especialista em React & TypeScript",
+        "Criadora de Soluções com IA",
+        "Apaixonada por Tecnologia",
     ];
 
     const textoElemento = $("#animated-text");
     let fraseIndex = 0;
     let letraIndex = 0;
     let deletando = false;
-    let velocidade = 100;
+    let velocidade = 80;
 
     function digitar() {
         const fraseAtual = frases[fraseIndex];
@@ -49,7 +70,7 @@ $(document).ready(function () {
             letraIndex++;
             if (letraIndex === fraseAtual.length) {
                 deletando = true;
-                setTimeout(digitar, 1500);
+                setTimeout(digitar, 2000);
                 return;
             }
         } else {
