@@ -51,9 +51,9 @@ $(document).ready(function () {
     });
 
     const frases = [
-        "Desenvolvedora Front-End",
-        "Especialista em React & TypeScript",
-        "Criadora de Soluções com IA",
+        "Desenvolvimento de Software",
+        "IA aplicada",
+        "Cloud Computing",
         "Apaixonada por Tecnologia",
     ];
 

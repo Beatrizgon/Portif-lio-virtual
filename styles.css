@@ -9,6 +9,11 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 .max-width {
@@ -140,6 +145,18 @@ html {
   font-size: 26px;
   cursor: pointer;
   display: none;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1001;
+}
+
+.text-3 {
+  min-height: 35px;
+  height: 35px;
+  overflow: hidden;
+  width: 100%;
 }
 
 section {
@@ -157,12 +174,11 @@ section .title {
 }
 
 #animated-text {
-  white-space: normal;
-  overflow-wrap: anywhere;
-  /* permite quebra em palavras longas */
-  word-break: break-word;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   max-width: 100%;
-  display: inline-block;
+  display: block;
   box-sizing: border-box;
   font-weight: 500;
   font-size: 23px;
@@ -337,14 +353,19 @@ footer {
 }
 
 .serv-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 
+@media (min-width: 769px) {
+  .serv-content {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
 .serv-content .card {
-  width: calc(20% - 16px);
+  width: 100%;
   height: 130px;
   background: rgb(26, 0, 37);
   border-radius: 12px;
@@ -486,12 +507,20 @@ footer {
 
 /* Menu Mobile - Base para todas telas menores */
 @media (max-width: 992px) {
+  .navbar .max-width {
+    position: relative;
+  }
+
   .menu-btn {
     display: block;
     font-size: 24px;
     color: #fff;
     cursor: pointer;
-    z-index: 1000;
+    z-index: 1001;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .navbar .menu {
@@ -501,7 +530,6 @@ footer {
     width: 70%;
     max-width: 280px;
     height: 100vh;
-    background: rgba(33, 3, 54, 0.98);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -509,6 +537,7 @@ footer {
     padding: 20px;
     transition: all 0.3s ease;
     z-index: 999;
+    backdrop-filter: blur(10px);
   }
 
   .navbar .menu.active {
@@ -528,7 +557,7 @@ footer {
     z-index: 998;
   }
 
-  .navbar .menu.active ~ .menu-overlay {
+  .navbar .menu-overlay.active {
     opacity: 1;
     visibility: visible;
   }
@@ -562,10 +591,6 @@ footer {
     width: 100%;
     min-width: unset;
   }
-
-  .serv-content .card {
-    width: calc(33.33% - 15px);
-  }
 }
 
 /* Tablets e celulares grandes */
@@ -586,6 +611,7 @@ footer {
   .home .home-content {
     min-width: unset;
     width: 100%;
+    overflow: hidden;
   }
 
   .home .home-content .text-2 {
@@ -645,7 +671,6 @@ footer {
   }
 
   .serv-content .card {
-    width: calc(50% - 10px);
     height: 110px;
   }
 
@@ -747,7 +772,6 @@ footer {
   }
 
   .serv-content .card {
-    width: calc(50% - 8px);
     height: 100px;
   }
 
@@ -812,8 +836,7 @@ footer {
   }
 
   .serv-content .card {
-    width: 100%;
-    height: 90px;
+    height: 85px;
   }
 }
 
@@ -878,6 +901,11 @@ footer {
   gap: 15px;
   margin-top: 30px;
   align-items: center;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
 }
 
 .btn-primary {
