@@ -252,11 +252,6 @@ footer {
   margin-bottom: 25px;
 }
 
-.section-header-about .section-tag {
-  font-size: 18px;
-  padding: 10px 20px;
-}
-
 .experience-boxes,
 .education-boxes {
   display: flex;
@@ -443,6 +438,11 @@ footer {
   gap: 25px;
 }
 
+a.contact-card {
+  text-decoration: none;
+  color: inherit;
+}
+
 .contact-card {
   background: #1a001f;
   border: 1px solid rgba(199, 125, 255, 0.15);
@@ -470,6 +470,7 @@ footer {
   margin-bottom: 5px;
 }
 
+.contact-card .info span,
 .contact-card .info a,
 .contact-card .info p {
   font-size: 15px;
@@ -488,6 +489,7 @@ footer {
   transform: scale(1.1);
 }
 
+.contact-card:hover .info span,
 .contact-card:hover .info a {
   color: #c77dff;
 }
@@ -665,11 +667,6 @@ footer {
     padding: 10px 20px;
   }
 
-  .section-header-about .section-tag {
-    font-size: 16px;
-    padding: 8px 16px;
-  }
-
   .serv-content .card {
     height: 110px;
   }
@@ -764,11 +761,6 @@ footer {
   .section-tag {
     font-size: 16px;
     padding: 8px 16px;
-  }
-
-  .section-header-about .section-tag {
-    font-size: 14px;
-    padding: 6px 14px;
   }
 
   .serv-content .card {
@@ -939,7 +931,7 @@ footer {
   border-radius: 12px;
   font-size: 16px;
   font-weight: 600;
-  border: 2px solid #c77dff;
+  border: 1.7px solid #c77dff;
   transition: all 0.3s ease;
 }
 
