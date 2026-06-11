@@ -13,7 +13,21 @@ $(document).ready(function () {
         } else {
             $('.navbar').removeClass('sticky');
         }
+        
+        // Back to Top Button
+        if (this.scrollY > 500) {
+            $('#backToTop').addClass('show');
+        } else {
+            $('#backToTop').removeClass('show');
+        }
     });
+    
+    // Smooth scroll para o botão voltar ao topo
+    $('#backToTop').click(function(e) {
+        e.preventDefault();
+        $('html, body').animate({scrollTop: 0}, 600);
+    });
+    
     $('.menu-btn').click(function () {
         $('.navbar .menu').toggleClass("active");
         $('.menu-overlay').toggleClass("active");

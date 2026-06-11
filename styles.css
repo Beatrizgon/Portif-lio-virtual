@@ -25,16 +25,16 @@ body {
 .navbar {
   position: fixed;
   width: 100%;
-  padding: 15px 0;
+  padding: 18px 0;
   font-family: 'Ubuntu', sans-serif;
   z-index: 999;
   transition: all 0.3s ease;
 }
 
 .navbar.sticky {
-  background: #58007e;
+  background: rgba(88, 0, 126, 0.95);
   padding: 15px 0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 20px rgba(148, 0, 211, 0.3);
 }
 
 .navbar .max-width {
@@ -51,14 +51,18 @@ body {
 
 .navbar-logo {
   width: auto;
-  height: 30px;
-  margin-right: 10px;
+  height: 35px;
+  margin-right: 12px;
 }
 
 .navbar .logo a {
   color: #fff;
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 20px;
+  font-weight: 600;
+  background: linear-gradient(to right, #fff, #e0aaff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .navbar .menu li {
@@ -68,18 +72,33 @@ body {
 
 .navbar .menu li a {
   color: #fff;
-  font-size: 15px;
-  font-weight: 500;
-  margin-left: 20px;
-  transition: color 0.3s ease;
+  font-size: 16px;
+  font-weight: 600;
+  margin-left: 30px;
+  transition: all 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.navbar .menu li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: #c77dff;
+  transition: width 0.3s ease;
+}
+
+.navbar .menu li a:hover::after {
+  width: 80%;
 }
 
 .navbar .menu li a:hover {
-  color: #9400d3;
-}
-
-.navbar.sticky .menu li a:hover {
-  color: #fff;
+  color: #c77dff;
 }
 
 /*home-início*/
@@ -423,6 +442,40 @@ footer {
   color: #fff;
   padding: 100px 0;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efeito de luz de fundo - Contato */
+.contact::before {
+  content: '';
+  position: absolute;
+  top: 30%;
+  left: -8%;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(200, 100, 255, 0.07) 0%, transparent 70%);
+  filter: blur(85px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.contact::after {
+  content: '';
+  position: absolute;
+  bottom: 20%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(100, 200, 180, 0.06) 0%, transparent 70%);
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.contact .max-width {
+  position: relative;
+  z-index: 1;
 }
 
 .contact .subtitle {
@@ -539,7 +592,9 @@ footer {
     padding: 20px;
     transition: all 0.3s ease;
     z-index: 999;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background: rgba(21, 0, 30, 0.3);
   }
 
   .navbar .menu.active {
@@ -907,7 +962,7 @@ footer {
   background: linear-gradient(135deg, #9400d3, #c77dff);
   color: #fff;
   padding: 14px 28px;
-  border-radius: 12px;
+  border-radius: 30px;
   font-size: 16px;
   font-weight: 600;
   border: none;
@@ -928,7 +983,7 @@ footer {
   background: transparent;
   color: #c77dff;
   padding: 13px 27px;
-  border-radius: 12px;
+  border-radius: 30px;
   font-size: 16px;
   font-weight: 600;
   border: 1.7px solid #c77dff;
@@ -1026,38 +1081,46 @@ footer {
   justify-content: center;
   flex-wrap: wrap;
   gap: 12px;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
+  background: rgba(16, 0, 22, 0.6);
+  padding: 12px 20px;
+  border-radius: 50px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid rgba(199, 125, 255, 0.15);
+  backdrop-filter: blur(10px);
 }
 
 .filter-btn {
-  background: rgba(26, 0, 37, 0.8);
-  color: #bbb;
-  border: 1px solid rgba(199, 125, 255, 0.2);
-  padding: 10px 24px;
-  border-radius: 50px;
+  background: transparent;
+  color: #999;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  position: relative;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 .filter-btn:hover {
-  background: rgba(199, 125, 255, 0.2);
+  background: rgba(199, 125, 255, 0.15);
   color: #fff;
 }
 
 .filter-btn.active {
   background: linear-gradient(135deg, #9400d3, #c77dff);
   color: #fff;
-  border-color: transparent;
-  box-shadow: 0 4px 15px rgba(148, 0, 211, 0.4);
+  box-shadow: 0 4px 20px rgba(148, 0, 211, 0.5);
 }
 
 /* Project Cards - Nova Estrutura */
-.skills .projects-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.projects .projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 25px;
   max-width: 1200px;
   margin: 0 auto;
@@ -1070,9 +1133,6 @@ footer {
   overflow: hidden;
   position: relative;
   transition: all 0.4s ease;
-  flex: 1 1 calc(33.333% - 20px);
-  max-width: calc(33.333% - 20px);
-  min-width: 300px;
   height: 420px;
   display: flex;
   flex-direction: column;
@@ -1321,6 +1381,13 @@ footer {
   color: #c77dff;
 }
 
+.footer-drink-icon {
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  margin-left: 2px;
+}
+
 .footer-social {
   display: flex;
   justify-content: center;
@@ -1355,16 +1422,18 @@ footer {
 
 /* Responsivo - Projetos */
 @media (max-width: 1100px) {
-  .project-card {
-    flex: 1 1 calc(50% - 15px);
-    max-width: calc(50% - 15px);
+  .projects .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 768px) {
+  .projects .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
   .project-card {
-    flex: 1 1 100%;
-    max-width: 100%;
     height: auto;
     min-height: 380px;
   }
@@ -1390,9 +1459,21 @@ footer {
     padding: 12px 24px;
     font-size: 14px;
   }
+  
+  /* Botões Hero Mobile - Mesmo tamanho */
+  .btn-primary,
+  .btn-whatsapp {
+    padding: 12px 22px;
+    font-size: 15px;
+    width: auto;
+  }
 }
 
 @media (max-width: 480px) {
+  .projects .projects-grid {
+    gap: 15px;
+  }
+  
   .project-card {
     min-height: 350px;
   }
@@ -1434,5 +1515,806 @@ footer {
   .project-badge {
     padding: 4px 10px;
     font-size: 10px;
+  }
+  
+  /* Botões Hero Mobile 480px - Mesmo tamanho */
+  .btn-primary,
+  .btn-whatsapp {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+}
+
+/* ========================================
+   NOVOS ESTILOS - REESTRUTURAÇÃO
+   ======================================== */
+
+/* Badge de Localização */
+.location-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.location-badge i {
+  color: #c77dff;
+  font-size: 14px;
+}
+
+/* Botão WhatsApp na Hero */
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+}
+
+.btn-whatsapp:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+}
+
+/* Botão Voltar ao Topo */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #9400d3, #c77dff);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(148, 0, 211, 0.4);
+  z-index: 1000;
+  text-decoration: none;
+}
+
+.back-to-top:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(148, 0, 211, 0.6);
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Seção de Projetos */
+.projects {
+  background: rgb(21, 0, 30);
+  color: #fff;
+  text-align: center;
+  padding: 80px 0;
+  font-family: 'Ubuntu', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efeito de luz de fundo - Projetos */
+.projects::before {
+  content: '';
+  position: absolute;
+  top: 30%;
+  right: -15%;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(100, 200, 255, 0.06) 0%, transparent 70%);
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.projects::after {
+  content: '';
+  position: absolute;
+  bottom: 20%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255, 120, 180, 0.06) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.projects .max-width {
+  position: relative;
+  z-index: 1;
+}
+
+/* ========================================
+   SEÇÃO: EXPERIÊNCIA PROFISSIONAL
+   ======================================== */
+.experience {
+  background: #100016;
+  color: #fff;
+  padding: 80px 0;
+  font-family: 'Ubuntu', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efeito de luz de fundo - Experiência */
+.experience::before {
+  content: '';
+  position: absolute;
+  top: 40%;
+  left: -12%;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(150, 100, 255, 0.07) 0%, transparent 70%);
+  filter: blur(85px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.experience::after {
+  content: '';
+  position: absolute;
+  bottom: 15%;
+  right: -8%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(100, 220, 200, 0.06) 0%, transparent 70%);
+  filter: blur(75px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.experience .max-width {
+  position: relative;
+  z-index: 1;
+}
+
+.experience-timeline {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  padding-left: 50px;
+}
+
+.experience-timeline::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background: linear-gradient(to bottom, #c77dff, #9400d3);
+  border-radius: 3px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -50px;
+  top: 0;
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, #9400d3, #c77dff);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(148, 0, 211, 0.5);
+  z-index: 2;
+}
+
+.timeline-marker i {
+  color: #fff;
+  font-size: 18px;
+}
+
+.timeline-content {
+  background: linear-gradient(145deg, rgba(26, 0, 37, 0.9), rgba(16, 0, 22, 0.95));
+  border: 1px solid rgba(199, 125, 255, 0.2);
+  border-radius: 20px;
+  padding: 25px 30px;
+  transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+  border-color: rgba(199, 125, 255, 0.4);
+  transform: translateX(5px);
+  box-shadow: 0 10px 30px rgba(148, 0, 211, 0.2);
+}
+
+.timeline-header {
+  margin-bottom: 15px;
+}
+
+.timeline-header h3 {
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+.timeline-header .company {
+  display: block;
+  font-size: 16px;
+  color: #c77dff;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.timeline-header .period {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #999;
+  background: rgba(199, 125, 255, 0.1);
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+
+.timeline-header .period i {
+  color: #c77dff;
+}
+
+.timeline-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 15px 0;
+}
+
+.timeline-list li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+.timeline-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  background: #c77dff;
+  border-radius: 50%;
+}
+
+.timeline-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.timeline-tags span {
+  background: rgba(199, 125, 255, 0.15);
+  color: #c77dff;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* ========================================
+   SEÇÃO: HABILIDADES POR CATEGORIA
+   ======================================== */
+.skills-section {
+  background: rgb(21, 0, 30);
+  color: #fff;
+  padding: 80px 0;
+  font-family: 'Ubuntu', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efeito de luz de fundo */
+.skills-section::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255, 100, 150, 0.08) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.skills-section::after {
+  content: '';
+  position: absolute;
+  bottom: 10%;
+  right: -5%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(80, 150, 255, 0.08) 0%, transparent 70%);
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.skills-section .max-width {
+  position: relative;
+  z-index: 1;
+}
+
+.skills-categories {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.skill-category {
+  background: linear-gradient(145deg, rgba(26, 0, 37, 0.9), rgba(16, 0, 22, 0.95));
+  border: 1px solid rgba(199, 125, 255, 0.2);
+  border-radius: 20px;
+  padding: 25px;
+  transition: all 0.3s ease;
+}
+
+.skill-category:hover {
+  border-color: rgba(199, 125, 255, 0.4);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(148, 0, 211, 0.2);
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(199, 125, 255, 0.15);
+}
+
+.category-header i {
+  font-size: 24px;
+  color: #c77dff;
+  background: rgba(199, 125, 255, 0.15);
+  width: 45px;
+  height: 45px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-header h3 {
+  font-size: 18px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.category-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(199, 125, 255, 0.1);
+  color: #ddd;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.skill-item:hover {
+  background: rgba(199, 125, 255, 0.2);
+  border-color: rgba(199, 125, 255, 0.3);
+  color: #fff;
+}
+
+.skill-item i {
+  font-size: 16px;
+  color: #c77dff;
+}
+
+/* ========================================
+   SEÇÃO: FORMAÇÃO E CURSOS
+   ======================================== */
+.education {
+  background: #100016;
+  color: #fff;
+  padding: 80px 0;
+  font-family: 'Ubuntu', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efeito de luz de fundo - Educação */
+.education::before {
+  content: '';
+  position: absolute;
+  top: 25%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255, 150, 100, 0.07) 0%, transparent 70%);
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.education::after {
+  content: '';
+  position: absolute;
+  bottom: 30%;
+  left: -12%;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(100, 180, 255, 0.06) 0%, transparent 70%);
+  filter: blur(85px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.education .max-width {
+  position: relative;
+  z-index: 1;
+}
+
+.education-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.education-card {
+  background: linear-gradient(145deg, rgba(26, 0, 37, 0.9), rgba(16, 0, 22, 0.95));
+  border: 1px solid rgba(199, 125, 255, 0.2);
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  gap: 25px;
+  transition: all 0.3s ease;
+}
+
+.education-card:hover {
+  border-color: rgba(199, 125, 255, 0.4);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(148, 0, 211, 0.2);
+}
+
+.education-card.main {
+  margin-bottom: 25px;
+}
+
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.edu-icon {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #9400d3, #c77dff);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 20px rgba(148, 0, 211, 0.4);
+}
+
+.edu-icon i {
+  font-size: 26px;
+  color: #fff;
+}
+
+.edu-info {
+  flex: 1;
+}
+
+.edu-info h3 {
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.edu-info .institution {
+  display: block;
+  font-size: 15px;
+  color: #c77dff;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.edu-info .period {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #999;
+  background: rgba(199, 125, 255, 0.1);
+  padding: 5px 12px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
+
+.edu-info .period i {
+  color: #c77dff;
+}
+
+.edu-details h4 {
+  font-size: 14px;
+  color: #c77dff;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.edu-details ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.edu-details ul li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #ddd;
+}
+
+.edu-details ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 6px;
+  height: 6px;
+  background: #c77dff;
+  border-radius: 50%;
+}
+
+.languages-list,
+.courses-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.languages-list li,
+.courses-list li {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #ddd;
+  line-height: 1.5;
+}
+
+.languages-list li strong {
+  color: #c77dff;
+}
+
+.courses-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.courses-list li i {
+  color: #c77dff;
+  font-size: 14px;
+}
+
+/* ========================================
+   SEÇÃO: CONTATO - CTA BUTTONS
+   ======================================== */
+.contact-cta {
+  text-align: center;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.btn-contact-now {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  color: #fff;
+  padding: 16px 32px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+}
+
+.btn-contact-now:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+}
+
+.btn-download-cv {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: #c77dff;
+  padding: 15px 31px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  border: 2px solid #c77dff;
+  transition: all 0.3s ease;
+}
+
+.btn-download-cv:hover {
+  background: rgba(199, 125, 255, 0.15);
+  transform: translateY(-3px);
+}
+
+/* ========================================
+   RESPONSIVO - NOVAS SEÇÕES
+   ======================================== */
+@media (max-width: 992px) {
+  .skills-categories {
+    grid-template-columns: 1fr;
+  }
+  
+  .education-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .experience-timeline {
+    padding-left: 40px;
+  }
+  
+  .experience-timeline::before {
+    left: 15px;
+  }
+  
+  .timeline-marker {
+    left: -40px;
+    width: 36px;
+    height: 36px;
+  }
+  
+  .timeline-marker i {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .experience-timeline {
+    padding-left: 0;
+  }
+  
+  .experience-timeline::before {
+    display: none;
+  }
+  
+  .timeline-marker {
+    position: relative;
+    left: 0;
+    margin-bottom: 15px;
+  }
+  
+  .timeline-content {
+    padding: 20px;
+  }
+  
+  .timeline-header h3 {
+    font-size: 18px;
+  }
+  
+  .education-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .edu-icon {
+    margin: 0 auto;
+  }
+  
+  .edu-details ul li,
+  .languages-list li,
+  .courses-list li {
+    text-align: left;
+  }
+  
+  .cta-buttons {
+    justify-content: center;
+  }
+  
+  .btn-whatsapp {
+    padding: 12px 22px;
+    font-size: 15px;
+  }
+  
+  .contact-cta {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn-download-cv {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .skill-category {
+    padding: 20px;
+  }
+  
+  .category-header h3 {
+    font-size: 16px;
+  }
+  
+  .category-header i {
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
+  }
+  
+  .skill-item {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+  
+  .education-card {
+    padding: 20px;
+  }
+  
+  .edu-info h3 {
+    font-size: 17px;
+  }
+  
+  .timeline-content {
+    padding: 18px;
+  }
+  
+  .timeline-list li {
+    font-size: 13px;
+  }
+  
+  .btn-whatsapp {
+    padding: 10px 18px;
+    font-size: 14px;
   }
 }
