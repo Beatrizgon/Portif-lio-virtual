@@ -1,10 +1,13 @@
 $(document).ready(function () {
     // Inicializar AOS (Animate on Scroll)
     AOS.init({
-        duration: 800,
-        easing: 'ease-in-out',
+        duration: 500,
+        easing: 'ease-out',
         once: true,
-        offset: 100
+        // offset 0 + anchorPlacement 'top-bottom': o elemento já anima assim que
+        // a borda superior dele encosta na base da tela, sem scroll extra
+        offset: 0,
+        anchorPlacement: 'top-bottom'
     });
 
     $(window).scroll(function () {
@@ -45,23 +48,33 @@ $(document).ready(function () {
     });
 
     // Filtro de Projetos
-    $('.filter-btn').click(function() {
+    $('.projects-filter').on('click', '.filter-btn', function () {
+        const $btn = $(this);
+
+        // Evita refazer o trabalho quando o filtro já está ativo
+        if ($btn.hasClass('active')) return;
+
         $('.filter-btn').removeClass('active');
-        $(this).addClass('active');
-        
-        const filter = $(this).data('filter');
-        
-        if (filter === 'all') {
-            $('.project-card').fadeIn(300);
-        } else {
-            $('.project-card').each(function() {
-                if ($(this).data('category') === filter) {
-                    $(this).fadeIn(300);
-                } else {
-                    $(this).fadeOut(300);
-                }
-            });
-        }
+        $btn.addClass('active');
+
+        const filter = $btn.data('filter');
+
+        $('.project-card').each(function () {
+            const card = this;
+            const visivel = filter === 'all' || $(card).data('category') === filter;
+
+            card.classList.remove('card-in');
+
+            if (!visivel) {
+                card.classList.add('is-hidden');
+                return;
+            }
+
+            card.classList.remove('is-hidden');
+            // Força o reflow para reiniciar a animação de entrada
+            void card.offsetWidth;
+            card.classList.add('card-in');
+        });
     });
 
     const frases = [

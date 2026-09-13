@@ -2318,3 +2318,172 @@ footer {
     font-size: 14px;
   }
 }
+/* ========================================
+   ATUALIZAÇÃO 2026 — FILTROS, CONQUISTAS E CERTIFICADOS
+   ======================================== */
+
+/* --- Filtro de projetos (sem fila de animação) --- */
+.project-card.is-hidden {
+  display: none;
+}
+
+.project-card.card-in {
+  animation: card-in 0.3s ease;
+}
+
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Fundo de fallback enquanto a imagem do projeto carrega ou falha */
+.project-image {
+  background: linear-gradient(135deg, rgba(148, 0, 211, 0.35), rgba(199, 125, 255, 0.15));
+}
+
+/* --- Selo "Concluído" na formação --- */
+.edu-info .period.status-done {
+  margin-left: 8px;
+  background: rgba(0, 255, 136, 0.12);
+  color: #00ff88;
+}
+
+.edu-info .period.status-done i {
+  color: #00ff88;
+}
+
+/* --- Card de conquistas acadêmicas --- */
+.education-card.award {
+  border-color: rgba(255, 215, 0, 0.3);
+  background: linear-gradient(145deg, rgba(45, 30, 0, 0.55), rgba(16, 0, 22, 0.95));
+}
+
+.education-card.award:hover {
+  border-color: rgba(255, 215, 0, 0.55);
+  box-shadow: 0 10px 30px rgba(255, 165, 0, 0.18);
+}
+
+.education-card.award .edu-icon {
+  background: linear-gradient(135deg, #ffd700, #ff8c00);
+  box-shadow: 0 5px 20px rgba(255, 165, 0, 0.4);
+}
+
+.education-card.award .edu-icon i {
+  color: #1a0025;
+}
+
+.award-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.award-list li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+.award-list li:last-child {
+  margin-bottom: 0;
+}
+
+.award-list li::before {
+  content: '\f005';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 2px;
+  font-size: 11px;
+  color: #ffd700;
+}
+
+.award-list li strong {
+  color: #ffd700;
+}
+
+/* --- Card de cursos e certificações --- */
+.education-card.courses {
+  margin-top: 25px;
+}
+
+.certificates-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  column-count: 2;
+  column-gap: 40px;
+}
+
+.certificates-list li {
+  break-inside: avoid;
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: #ddd;
+  line-height: 1.5;
+}
+
+.certificates-list li strong {
+  color: #c77dff;
+  font-weight: 600;
+}
+
+.certificates-note {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(199, 125, 255, 0.15);
+  font-size: 12.5px;
+  color: #999;
+  line-height: 1.6;
+}
+
+/* --- Ícone dos cards de formação alinhado à direita --- */
+@media (min-width: 769px) {
+  .education-card {
+    flex-direction: row-reverse;
+  }
+
+  .education-card .edu-icon {
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .certificates-list {
+    column-count: 1;
+  }
+
+  .certificates-list li {
+    text-align: left;
+  }
+
+  .edu-info .period.status-done {
+    margin-left: 0;
+  }
+}
+
+.overlay-content.compact .overlay-btn {
+  padding: 8px 14px;
+  font-size: 12.5px;
+  gap: 6px;
+  border-radius: 8px;
+}
+
+.overlay-btn-live {
+  background: linear-gradient(135deg, #9400d3, #c77dff);
+  border-color: rgba(199, 125, 255, 0.6);
+}
+
+.overlay-btn-live:hover {
+  box-shadow: 0 4px 15px rgba(148, 0, 211, 0.5);
+}
