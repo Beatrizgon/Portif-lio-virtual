@@ -32,37 +32,28 @@ body {
 }
 
 .navbar.sticky {
-  background: rgba(88, 0, 126, 0.95);
+  /* vidro: quase sem cor própria, o que se vê é a página desfocada atrás */
+  background: rgba(14, 0, 20, 0.28);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+  backdrop-filter: blur(24px) saturate(150%);
   padding: 15px 0;
-  box-shadow: 0 4px 20px rgba(148, 0, 211, 0.3);
+  box-shadow: 0 4px 22px rgba(0, 0, 0, 0.32);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Sem suporte a backdrop-filter o fundo quase transparente deixaria
+   o menu ilegível — nesse caso volta a ser um fundo sólido escuro */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .navbar.sticky {
+    background: rgba(14, 0, 20, 0.92);
+  }
 }
 
 .navbar .max-width {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
-}
-
-.navbar .logo-wrapper {
-  display: flex;
-  align-items: center;
-}
-
-.navbar-logo {
-  width: auto;
-  height: 35px;
-  margin-right: 12px;
-}
-
-.navbar .logo a {
-  color: #fff;
-  font-size: 20px;
-  font-weight: 600;
-  background: linear-gradient(to right, #fff, #e0aaff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 .navbar .menu li {
@@ -74,7 +65,12 @@ body {
   color: #fff;
   font-size: 16px;
   font-weight: 600;
-  margin-left: 30px;
+  /* inline-block para o padding vertical valer: como inline, os 8px de
+     cima e de baixo eram ignorados e a barra ficava fina */
+  display: inline-block;
+  /* margem simétrica: com o menu centralizado, margin-left sozinho
+     deslocaria o conjunto para a direita */
+  margin: 0 15px;
   transition: all 0.3s ease;
   padding: 8px 16px;
   border-radius: 8px;
@@ -454,7 +450,7 @@ footer {
   left: -8%;
   width: 450px;
   height: 450px;
-  background: radial-gradient(circle, rgba(200, 100, 255, 0.07) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(200, 100, 255, 0.17) 0%, transparent 70%);
   filter: blur(85px);
   pointer-events: none;
   z-index: 0;
@@ -467,7 +463,7 @@ footer {
   right: -10%;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(100, 200, 180, 0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(100, 200, 180, 0.17) 0%, transparent 70%);
   filter: blur(90px);
   pointer-events: none;
   z-index: 0;
@@ -564,6 +560,9 @@ footer {
 @media (max-width: 992px) {
   .navbar .max-width {
     position: relative;
+    /* sem a logo, o menu (fixed) e o botão (absolute) saem do fluxo e a
+       barra colapsaria para altura zero, levando o hambúrguer junto */
+    min-height: 34px;
   }
 
   .menu-btn {
@@ -684,9 +683,6 @@ footer {
     text-align: center;
   }
 
-  .badge-container {
-    text-align: center;
-  }
 
   .cta-buttons {
     justify-content: center;
@@ -778,10 +774,6 @@ footer {
     font-size: 14px;
   }
 
-  .status-badge {
-    font-size: 12px;
-    padding: 6px 12px;
-  }
 
   .btn-primary,
   .btn-secondary {
@@ -892,41 +884,11 @@ footer {
    ======================================== */
 
 /* Status Badge - Home */
-.badge-container {
-  margin-bottom: 15px;
-}
 
-.status-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(0, 255, 136, 0.15);
-  border: 1px solid rgba(0, 255, 136, 0.3);
-  color: #00ff88;
-  padding: 8px 16px;
-  border-radius: 50px;
-  font-size: 14px;
-  font-weight: 500;
-  animation: pulse-badge 2s infinite;
-}
 
-.status-badge i {
-  font-size: 8px;
-}
 
-.pulse {
-  animation: pulse-dot 1.5s infinite;
-}
 
-@keyframes pulse-dot {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
-}
 
-@keyframes pulse-badge {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.3); }
-  50% { box-shadow: 0 0 20px 5px rgba(0, 255, 136, 0.1); }
-}
 
 /* Home Description */
 .home-description {
@@ -1620,7 +1582,7 @@ footer {
   right: -15%;
   width: 550px;
   height: 550px;
-  background: radial-gradient(circle, rgba(100, 200, 255, 0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(100, 200, 255, 0.17) 0%, transparent 70%);
   filter: blur(90px);
   pointer-events: none;
   z-index: 0;
@@ -1633,7 +1595,7 @@ footer {
   left: -10%;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(255, 120, 180, 0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 120, 180, 0.17) 0%, transparent 70%);
   filter: blur(80px);
   pointer-events: none;
   z-index: 0;
@@ -1664,7 +1626,7 @@ footer {
   left: -12%;
   width: 450px;
   height: 450px;
-  background: radial-gradient(circle, rgba(150, 100, 255, 0.07) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(150, 100, 255, 0.17) 0%, transparent 70%);
   filter: blur(85px);
   pointer-events: none;
   z-index: 0;
@@ -1677,7 +1639,7 @@ footer {
   right: -8%;
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(100, 220, 200, 0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(100, 220, 200, 0.17) 0%, transparent 70%);
   filter: blur(75px);
   pointer-events: none;
   z-index: 0;
@@ -1844,7 +1806,7 @@ footer {
   left: -10%;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(255, 100, 150, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 100, 150, 0.17) 0%, transparent 70%);
   filter: blur(80px);
   pointer-events: none;
   z-index: 0;
@@ -1857,7 +1819,7 @@ footer {
   right: -5%;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(80, 150, 255, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(80, 150, 255, 0.17) 0%, transparent 70%);
   filter: blur(100px);
   pointer-events: none;
   z-index: 0;
@@ -1968,7 +1930,7 @@ footer {
   right: -10%;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(255, 150, 100, 0.07) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 150, 100, 0.17) 0%, transparent 70%);
   filter: blur(90px);
   pointer-events: none;
   z-index: 0;
@@ -1981,7 +1943,7 @@ footer {
   left: -12%;
   width: 450px;
   height: 450px;
-  background: radial-gradient(circle, rgba(100, 180, 255, 0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(100, 180, 255, 0.17) 0%, transparent 70%);
   filter: blur(85px);
   pointer-events: none;
   z-index: 0;
@@ -2486,4 +2448,276 @@ footer {
 
 .overlay-btn-live:hover {
   box-shadow: 0 4px 15px rgba(148, 0, 211, 0.5);
+}
+
+/* ============================================================
+   REDESIGN — CARDS EM VIDRO E CARROSSEL DE HABILIDADES
+   ============================================================ */
+
+:root {
+  /* Gradiente translúcido: o canto claro fica ΔL* 11.5 acima do fundo
+     e o canto escuro ΔL* 4.0 — antes a base do card era ΔL* 0, ou seja,
+     exatamente a cor da página. É por isso que o card sumia. */
+  --card-grad: linear-gradient(145deg, rgba(122, 72, 158, 0.30), rgba(74, 40, 102, 0.22));
+  --card-border: rgba(199, 125, 255, 0.30);
+  --card-border-hover: rgba(199, 125, 255, 0.55);
+  --card-blur: blur(16px) saturate(125%);
+}
+
+.project-card,
+.timeline-content,
+.education-card,
+.contact-card {
+  background: var(--card-grad);
+  -webkit-backdrop-filter: var(--card-blur);
+  backdrop-filter: var(--card-blur);
+  border: 1px solid var(--card-border);
+}
+
+.project-card:hover,
+.timeline-content:hover,
+.education-card:hover,
+.contact-card:hover {
+  border-color: var(--card-border-hover);
+}
+
+/* Destaque e conquista: mesma receita de vidro, só muda o matiz */
+.project-card.featured {
+  background: linear-gradient(145deg, rgba(150, 88, 190, 0.34), rgba(88, 46, 122, 0.24));
+  border-color: rgba(199, 125, 255, 0.42);
+}
+
+.education-card.award {
+  background: linear-gradient(145deg, rgba(190, 140, 60, 0.22), rgba(74, 40, 102, 0.24));
+  border-color: rgba(255, 215, 0, 0.34);
+}
+
+.education-card.award:hover {
+  border-color: rgba(255, 215, 0, 0.6);
+}
+
+/* --- Bloco "sobre" no hero --- */
+.home-about {
+  margin-top: 18px;
+  padding-left: 16px;
+  border-left: 2px solid rgba(199, 125, 255, 0.35);
+  max-width: 550px;
+  font-size: 15px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.home-about strong {
+  color: #e0c3ff;
+  font-weight: 500;
+}
+
+/* --- Linha de contexto técnico nos cards de projeto --- */
+.project-card {
+  height: 500px;
+}
+
+.project-insight {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(199, 125, 255, 0.16);
+  font-size: 13px;
+  line-height: 1.5;
+  color: #a396b0;
+}
+
+.project-insight b {
+  color: #d9cfe3;
+  font-weight: 500;
+}
+
+/* --- Carrossel de habilidades --- */
+.skills-marquees {
+  display: grid;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee var(--dur, 50s) linear infinite;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* Sem gap no track e com padding no grupo, os dois grupos ficam
+   exatamente iguais e o -50% emenda sem salto */
+.marquee-group {
+  display: flex;
+  gap: 18px;
+  padding-right: 18px;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.tech {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  white-space: nowrap;
+  padding: 15px 24px;
+  border-radius: 14px;
+  font-size: 15.5px;
+  font-weight: 500;
+  color: #ddd;
+  background: linear-gradient(145deg, rgba(122, 72, 158, 0.26), rgba(74, 40, 102, 0.18));
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid color-mix(in srgb, var(--tech) 30%, transparent);
+  transition: all 0.25s ease;
+}
+
+.tech i {
+  font-size: 19px;
+  color: var(--tech);
+}
+
+.tech:hover {
+  color: #fff;
+  border-color: color-mix(in srgb, var(--tech) 65%, transparent);
+  box-shadow: 0 6px 22px color-mix(in srgb, var(--tech) 22%, transparent);
+}
+
+/* --- Acessibilidade --- */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #c77dff;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Sem animação o carrossel vira uma faixa rolável na mão */
+  .marquee {
+    overflow-x: auto;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    height: auto;
+    min-height: 460px;
+  }
+
+  .tech {
+    padding: 9px 14px;
+    font-size: 13px;
+  }
+}
+
+/* --- Contato: cards mais baixos --- */
+.contact-card {
+  padding: 20px 18px;
+  gap: 10px;
+}
+
+.contact-card ion-icon {
+  font-size: 30px;
+}
+
+.contact-card .info h3 {
+  font-size: 16px;
+  margin-bottom: 2px;
+}
+
+.contact-cta {
+  margin-top: 28px;
+}
+
+/* --- Footer mais compacto --- */
+footer {
+  padding: 28px 23px 20px;
+}
+
+.footer-brand {
+  margin-bottom: 12px;
+}
+
+.footer-brand span {
+  font-size: 18px;
+}
+
+.footer-logo {
+  width: 28px;
+}
+
+.footer-text {
+  margin-bottom: 14px;
+}
+
+.footer-social {
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.footer-social a {
+  width: 38px;
+  height: 38px;
+  font-size: 16px;
+}
+
+/* Card de contato na horizontal: ícone ao lado do texto, não acima.
+   É o que realmente derruba a altura (~103px -> ~72px). */
+.contact-card {
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+  gap: 14px;
+  padding: 16px 18px;
+}
+
+.contact-card ion-icon {
+  font-size: 26px;
+  flex-shrink: 0;
+}
+
+.contact-card .info span {
+  font-size: 13.5px;
+}
+
+/* Footer: menos respiro entre os blocos */
+footer {
+  padding: 24px 23px 18px;
+}
+
+.footer-brand {
+  margin-bottom: 10px;
+}
+
+.footer-text {
+  margin-bottom: 12px;
+}
+
+.footer-social {
+  margin-bottom: 12px;
 }
