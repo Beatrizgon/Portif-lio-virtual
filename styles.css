@@ -105,9 +105,11 @@ body {
   flex-wrap: wrap;
   background: url("image/ChatGPT Image 26 de set. de 2025, 14_02_31.png") no-repeat center;
   background-size: cover;
-  height: 100vh;
+  /* min-height em vez de height: com altura fixa, o conteúdo que não cabia
+     vazava para fora do hero e era pintado sob a seção de projetos
+     (position: relative), ficando impossível de clicar em telas baixas */
+  min-height: 100vh;
   color: #fff;
-  min-height: 500px;
   font-family: 'Ubuntu', sans-serif;
   line-height: 1.5;
 }

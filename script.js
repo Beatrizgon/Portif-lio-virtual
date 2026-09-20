@@ -71,10 +71,20 @@ $(document).ready(function () {
             }
 
             card.classList.remove('is-hidden');
+            // Um card que ainda não tinha entrado na tela continua com
+            // opacidade 0 do AOS. Ao subir para a primeira posição pelo
+            // filtro, ele apareceria vazio até o próximo scroll.
+            card.classList.add('aos-animate');
             // Força o reflow para reiniciar a animação de entrada
             void card.offsetWidth;
             card.classList.add('card-in');
         });
+
+        // O grid mudou de altura: o AOS precisa recalcular os gatilhos
+        // das seções seguintes
+        if (window.AOS) {
+            AOS.refresh();
+        }
     });
 
     const frases = [
