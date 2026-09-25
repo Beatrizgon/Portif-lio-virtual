@@ -61,7 +61,10 @@ $(document).ready(function () {
 
         $('.project-card').each(function () {
             const card = this;
-            const visivel = filter === 'all' || $(card).data('category') === filter;
+            // data-category aceita mais de uma categoria separada por espaço,
+            // então um projeto pode aparecer em mais de um filtro
+            const categorias = String($(card).data('category')).split(/\s+/);
+            const visivel = filter === 'all' || categorias.indexOf(filter) !== -1;
 
             card.classList.remove('card-in');
 

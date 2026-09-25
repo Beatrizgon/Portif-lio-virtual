@@ -1977,10 +1977,6 @@ footer {
   box-shadow: 0 10px 30px rgba(148, 0, 211, 0.2);
 }
 
-.education-card.main {
-  margin-bottom: 25px;
-}
-
 .education-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -2722,4 +2718,88 @@ footer {
 
 .footer-social {
   margin-bottom: 12px;
+}
+
+/* --- Card da pós-graduação: azul, para separar das outras três --- */
+.education-card.postgrad {
+  border-color: rgba(78, 168, 255, 0.34);
+  background: linear-gradient(145deg, rgba(38, 104, 180, 0.28), rgba(74, 40, 102, 0.24));
+}
+
+.education-card.postgrad:hover {
+  border-color: rgba(78, 168, 255, 0.62);
+}
+
+.education-card.postgrad .edu-icon {
+  background: linear-gradient(135deg, #2F80ED, #56CCF2);
+  box-shadow: 0 5px 20px rgba(47, 128, 237, 0.42);
+}
+
+.education-card.postgrad .institution,
+.education-card.postgrad .edu-details h4 {
+  color: #7CC4FF;
+}
+
+.education-card.postgrad .edu-details ul li::before {
+  background: #56CCF2;
+}
+
+.edu-info .period.status-progress {
+  margin-left: 8px;
+  background: rgba(86, 204, 242, 0.14);
+  color: #7CC4FF;
+}
+
+.edu-info .period.status-progress i {
+  color: #56CCF2;
+}
+
+/* Com 4 cards no grid, as linhas precisam de altura uniforme */
+.education-grid {
+  align-items: stretch;
+}
+
+@media (max-width: 768px) {
+  .edu-info .period.status-progress {
+    margin-left: 0;
+  }
+}
+
+/* --- Marca no header --- */
+/* Posição absoluta de propósito: no fluxo ela empurraria o menu e ele
+   deixaria de ficar centralizado na tela */
+.navbar .max-width {
+  position: relative;
+}
+
+.navbar-mark {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  line-height: 0;
+  opacity: 0.9;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.navbar-mark img {
+  width: 30px;
+  height: auto;
+}
+
+.navbar-mark:hover {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.08);
+}
+
+@media (max-width: 768px) {
+  .navbar-mark {
+    left: 20px;
+  }
+
+  .navbar-mark img {
+    width: 28px;
+  }
 }
