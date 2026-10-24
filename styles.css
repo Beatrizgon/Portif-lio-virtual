@@ -2496,18 +2496,24 @@ footer {
 
 /* --- Bloco "sobre" no hero --- */
 .home-about {
+  position: relative;
   margin-top: 18px;
-  padding-left: 16px;
-  border-left: 2px solid rgba(199, 125, 255, 0.35);
+  padding-left: 14px;
   max-width: 550px;
   font-size: 15px;
   line-height: 1.65;
   color: rgba(255, 255, 255, 0.62);
 }
 
-.home-about strong {
-  color: #e0c3ff;
-  font-weight: 500;
+.home-about::before {
+  content: "";
+  position: absolute;
+  top: 0.7em;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: rgba(199, 125, 255, 0.75);
 }
 
 /* --- Linha de contexto técnico nos cards de projeto --- */
