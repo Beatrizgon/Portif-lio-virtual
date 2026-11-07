@@ -91,10 +91,8 @@ $(document).ready(function () {
     });
 
     const frases = [
-        "Desenvolvimento de Software",
-        "IA aplicada",
-        "Cloud Computing",
-        "Apaixonada por Tecnologia",
+        "Desenvolvedora Front-end",
+        "React & JavaScript",
     ];
 
     const textoElemento = $("#animated-text");
