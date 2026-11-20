@@ -24,7 +24,7 @@ Abrir `index.html` com o Live Server do VS Code (porta 5501, ver `.vscode/settin
 - Filtro padrão deveria ser "Front-End", não "Todos".
 - Nome: usar "Beatriz Gonçalves" em todo o site (README e link do LinkedIn ainda usam "Beatriz dos Prazeres").
 - Só o GitHub Wrapped tem demo; faltam deploys dos outros projetos.
-- `document/Currículo - Beatriz dos Prazeres.docx` (botão "Baixar currículo") provavelmente está desatualizado: a versão atual fica em OneDrive\Documentos\Claude\vagas\curriculo\.
+- Botão "Baixar currículo" (seção contact) aponta para `document/Curriculo-Beatriz-Goncalves.pdf` (versão de 20/11/2026). Ao atualizar o currículo, substituir esse PDF mantendo o mesmo nome. O `.docx` antigo na mesma pasta não é mais usado pelo site.
 
 ## Como trabalhar aqui
 - Explique as decisões em 3 a 5 pontos ao terminar (a Bia quer aprender e saber defender em entrevista).
